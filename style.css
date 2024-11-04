@@ -242,7 +242,7 @@ a:hover {
     max-width: 100px;
     /* Prevent the div from getting too wide */
     height: 300px;
-    overflow: auto;
+    overflow: hidden;
     /* Enable scrolling when content overflows */
 }
 
@@ -256,6 +256,13 @@ a:hover {
 }
 */
 @media (min-aspect-ratio: 16/10) {
+    .products-container {
+        flex-direction: row !important;
+        /* Stack the items vertically */
+        width: 100% !important;
+        /* Adjust width to fit screen */
+    }
+
     .home-logo {
         height: auto !important;
         width: 80% !important;
@@ -281,10 +288,7 @@ a:hover {
     }
 
     .product-container {
-        max-width: calc(100vh * (16 / 10));
-        /* Keep 16:10 aspect ratio */
-        margin: 0 auto;
-        width: 80%;
+        width: 80% !important;
         /* Or any percentage/px value you'd like */
     }
 }
