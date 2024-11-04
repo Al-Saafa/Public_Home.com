@@ -40,8 +40,8 @@ html {
     /* Adjust for spacing from the top */
     right: 20px;
     /* Adjust for spacing from the left */
-    width: 20% !important;
-    height: auto !important;
+    width: 20%;
+    height: auto;
     /* Adjust size as needed */
 }
 
@@ -125,6 +125,7 @@ html {
 body,
 .page,
 .checkout-box {
+    width: 100%;
     background-color: var(--background-color);
     color: var(--text-color);
     opacity: 1 !important;
@@ -189,6 +190,7 @@ a:hover {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -213,14 +215,6 @@ a:hover {
     background-color: var(--theme) !important;
 }
 
-.checkout-box {
-    flex: 1 1 30%;
-    /* Three boxes per row */
-    max-width: 30%;
-    /* Limit the width of the boxes */
-    margin: 10px;
-}
-
 #product-categories {
     display: flex;
     text-align: center;
@@ -238,8 +232,8 @@ a:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
+    /*max-width: 300px;*/
     /* Set width dynamically */
-    max-width: 100px;
     /* Prevent the div from getting too wide */
     height: 300px;
     overflow: hidden;
@@ -256,8 +250,17 @@ a:hover {
 }
 */
 @media (min-aspect-ratio: 16/10) {
+    .checkout-box {
+        flex: 1 1 100%;
+        /* Full width on smaller screens */
+        width: 100% !important;
+        max-width: none !important;
+        /* Ensure it doesn't exceed the container */
+    }
+
     .products-container {
         flex-direction: row !important;
+        /*flex-wrap: nowrap !important;*/
         /* Stack the items vertically */
         width: 100% !important;
         /* Adjust width to fit screen */
@@ -288,7 +291,9 @@ a:hover {
     }
 
     .product-container {
-        width: 80% !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto;
         /* Or any percentage/px value you'd like */
     }
 }
@@ -320,8 +325,10 @@ a:hover {
 /* Each product box should take equal space */
 .checkout-box {
     flex: 1 1 30%;
+    justify-content: center;
+    align-items: center;
     /* Three boxes per row */
-    max-width: 30%;
+    /*max-width: 30%;*/
     margin: 10px;
     border: 1px solid #FFD700;
     padding: 10px;
