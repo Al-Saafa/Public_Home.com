@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <!-- Logo with animation to the top-right corner -->
+
+    <!-- Overlay to blur background while logo is centered -->
+    <!--<div id="background-blur"></div> -->
+    <div id="nav-logo-container" class="nav-logo-container">
+        <div id="nav">
+            <button class="category-title" href="#" id="nav-home" onclick="showPage('home')">Home</button>
+            <button class="category-title" href="#" id="nav-checkout" onclick="showPage('checkout')">Checkout</button>
+            <button class="category-title" href="#" id="nav-contact" onclick="showPage('contact')">Contact
+                Us</button>
+        </div>
+    </div>
+    <div id="logo-container" class="logo-container home-logo">
+        <img src="./images/Logo3.jpg" alt="Logo" class="logo">
+    </div>
+    <!-- Pages -->
+    <div id="home" class="page">
+        <div id="slideshow-container" class="fade">
+            <img class="slideshow-img fade-in" id="slideshow-image" src="" alt="Cashew Image" />
+            <div class="slideshow-text-container fade-in">
+                <div id="slideshow-text" class="slideshow-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout" class="page fade" style="display: none;">
+        <h1>Checkout</h1>
+
+        <!-- Product Categories (Collapsible) -->
+        <div id="product-categories">
+            <button id="cashews-container-title" class="category-title"
+                onclick="toggleCategory('cashews-container')">Cashews</button>
+
+            <button id="tea-container-title" class="category-title" onclick="toggleCategory('tea-container')">Tea
+                Powder</button>
+        </div>
+        <div id="product-list">
+            <div id="cashews-container" class="products-container"></div>
+            <div id="tea-container" class="products-container" style="display: none;"></div>
+        </div>
+        <!-- Total Price -->
+
+        <!-- Checkout Button -->
+        <button onclick="checkoutWhatsApp()"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                alt="WhatsApp Icon" class="whatsapp-icon">Checkout via WhatsApp</button>
+
+        <!-- Refresh Total Button -->
+        <button onclick="refreshTotal()" class="total-price">
+            <div id="total-price" class="total-price-text">Total: ₹0.00</div>
+            </t>Refresh Total
+        </button>
+    </div>
+
+    <div id="contact" class="page fade" style="display: none;">
+        <h1>Contact Us</h1>
+        <p>Feel free to reach out to us through:</p>
+
+        <!-- WhatsApp contact with icon -->
+        <a href="https://wa.me/+918089841228" target="_blank" class="whatsapp-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon"
+                class="whatsapp-icon">
+            WhatsApp
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

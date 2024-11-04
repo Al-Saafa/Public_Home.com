@@ -1,0 +1,453 @@
+/* CSS Variables for Colors */
+:root {
+    --theme: #FFD700;
+    --whatsapp-green: #25D366;
+    --whatsapp-hover: #22bb58;
+    --button-green: #22bb58;
+    --button-green-hover: #FFD700;
+    --orange: #f39c12;
+    --orange-hover: #FFD700;
+    --border-color: #ddd;
+    --background-color: #000000;
+    /* Global background color */
+    --text-color: #FFD700;
+    /* Global text color */
+    --pure-black: #000000;
+    --grey-bg: var(--grey-bg);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    /* Optional: Dark background for contrast */
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: sans-serif !important;
+}
+
+.content {
+    text-align: center;
+    padding-top: 20%;
+    transition: filter 1s ease;
+    /* For background blur effect */
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    /* Adjust for spacing from the top */
+    right: 20px;
+    /* Adjust for spacing from the left */
+    width: 20% !important;
+    height: auto !important;
+    /* Adjust size as needed */
+}
+
+/*
+.logo {
+    position: relative;
+    width: 100px;
+    height: auto;
+    width: 20%;
+    max-width: 200px;
+    border-radius: 5%;
+}*/
+
+/*.logo-container {
+    display: flex;
+    align-self: auto;
+}*/
+
+/* Logo Styling 
+.home-logo {
+    width: 100% !important;
+    align-items: center;
+    justify-content: center;
+}*/
+
+/* Slideshow container - centers content and hides overflow */
+#slideshow-container {
+    position: relative;
+    padding-top: 10% !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column !important;
+    max-height: 50% !important;
+    /* Adjust height based on width */
+    /* Prevents overflow by limiting height */
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.fade {
+    transition: opacity 0.3s;
+    opacity: 0 !important;
+}
+
+/* Image styling */
+.slideshow-img {
+    width: 30%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    text-align: justify;
+    margin: auto;
+
+    /*    display: flex;*/
+    /* Default width for landscape view */
+}
+
+.slideshow-text {
+    font-size: calc(1vw + 1rem) !important;
+    /* Adjusts font size based on viewport width */
+    padding: 10px;
+}
+
+.slideshow-text-container {
+    display: flex;
+    text-align: justify;
+    margin: auto;
+}
+
+/* Box Model */
+* {
+    box-sizing: border-box;
+    /* Ensure padding and border are included in width/height */
+}
+
+/* Global background and text color */
+body,
+.page,
+.checkout-box {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    opacity: 1 !important;
+    /* Default text color */
+}
+
+/* Style for the navigation bar */
+#nav {
+    display: flex;
+    background-color: var(--grey-bg);
+    /* Keep the nav background separate */
+    padding: 10px;
+    flex-direction: row !important;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 50%;
+    height: 10% !important;
+    padding-top: 1%;
+}
+
+#nav-logo-container {
+    display: flex;
+    width: 100%;
+    height: 30% !important;
+    align-content: space-between !important;
+}
+
+/* Styling for the "Contact Us" WhatsApp link */
+a {
+    color: var(--whatsapp-green);
+    /* Keep WhatsApp green for the link */
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for WhatsApp link */
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #25D366;
+    text-decoration: none;
+}
+
+.whatsapp-link:hover {
+    text-decoration: underline;
+}
+
+/* WhatsApp icon styling */
+.whatsapp-icon {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.products-container {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-title {
+    display: flex;
+    justify-content: center;
+    background-color: var(--grey-bg);
+    color: var(--theme);
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.category-title:hover {
+    color: var(--pure-black) !important;
+    background-color: var(--theme) !important;
+}
+
+.checkout-box {
+    flex: 1 1 30%;
+    /* Three boxes per row */
+    max-width: 30%;
+    /* Limit the width of the boxes */
+    margin: 10px;
+}
+
+#product-categories {
+    display: flex;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#product-categories button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.product-container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Set width dynamically */
+    max-width: 100px;
+    /* Prevent the div from getting too wide */
+    height: 300px;
+    overflow: auto;
+    /* Enable scrolling when content overflows */
+}
+
+/*
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 200px;
+}
+*/
+@media (min-aspect-ratio: 16/10) {
+    .home-logo {
+        height: auto !important;
+        width: 80% !important;
+    }
+
+    /*.logo {
+        width: auto !important;
+        height: auto !important;
+    }*/
+
+    .slideshow-text {
+        font-size: clamp(1rem, 2.5vw, 2rem) !important;
+        /* Keeps font size between min and max */
+    }
+
+    .slideshow-img {
+        height: 30%;
+        width: auto;
+    }
+
+    #slideshow-container {
+        flex-direction: row !important;
+    }
+
+    .product-container {
+        max-width: calc(100vh * (16 / 10));
+        /* Keep 16:10 aspect ratio */
+        margin: 0 auto;
+        width: 80%;
+        /* Or any percentage/px value you'd like */
+    }
+}
+
+/* Flexbox for product categories */
+.product-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center products horizontally */
+    gap: 20px;
+    /* Space between product boxes */
+    margin-bottom: 30px;
+    /* Space between sections */
+}
+
+.product-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center products horizontally */
+    gap: 20px;
+    /* Space between product boxes */
+    margin-bottom: 30px;
+    /* Space between sections */
+}
+
+/* Each product box should take equal space */
+.checkout-box {
+    flex: 1 1 30%;
+    /* Three boxes per row */
+    max-width: 30%;
+    margin: 10px;
+    border: 1px solid #FFD700;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Make sure images are centered inside the product boxes */
+.product-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+/* More CSS rules stay the same */
+
+.product-image {
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Product Name */
+.product-name h2 {
+    font-size: 1.4em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Product Price */
+.product-price p {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Quantity Selector Styling */
+.quantity-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Quantity Number Styling */
+.quantity {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    width: 40px;
+    /* Fixed width for the quantity box */
+    height: 40px;
+    /* Fixed height to make it a square */
+    font-size: 1.2em;
+    /* Adjust font size */
+    /*    border: 1px solid var(--border-color); Use variable for border color */
+    margin: 0;
+    /* Reset margin */
+    padding: 0;
+    /* Reset padding */
+    line-height: 40px;
+    /* Vertically center the number */
+    text-align: center;
+    /* Text centered inside the box */
+}
+
+/* Quantity Button Styling */
+.quantity-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quantity-btn:nth-child(1) {
+    background-color: var(--button-green);
+    /* Green for '-' button */
+}
+
+.quantity-btn:nth-child(3) {
+    background-color: #FF9800;
+    /* Orange for '+' button */
+}
+
+.quantity-btn:hover {
+    background-color: var(--button-green-hover);
+    color: var(--pure-black);
+}
+
+/* Total Price Styling */
+.total-price,
+.total-price-text {
+    margin-top: 20px;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Checkout Button Styling */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--grey-bg);
+    /* WhatsApp green */
+    color: var(--theme);
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Smooth transition for hover */
+}
+
+button:hover {
+    color: var(--pure-black);
+    background-color: var(--theme);
+}
+
+/* Styling for Refresh Total button */
+.refresh-total-btn {
+    background-color: var(--orange);
+    /* Orange for refresh button */
+}
+
+.refresh-total-btn:hover {
+    background-color: var(--orange-hover);
+}
