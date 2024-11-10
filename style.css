@@ -35,10 +35,8 @@ html {
 }
 
 .logo {
-    position: absolute;
-    top: 20px;
+    position: relative;
     /* Adjust for spacing from the top */
-    right: 20px;
     /* Adjust for spacing from the left */
     width: 20%;
     height: auto;

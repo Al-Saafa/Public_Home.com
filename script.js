@@ -3,15 +3,17 @@ function showPage(pageId) {
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => {
         if (page.id === pageId) {
-            const myTimein = setTimeout(() => {
-                page.classList.remove('fade')
-                page.style.display = 'inline';
-                if ('home' === pageId) {
-                    document.getElementById('logo-container').classList.add('home-logo');
-                } else {
-                    document.getElementById('logo-container').classList.remove('home-logo');
-                }
-            }, 500)
+            if (page.style.display === 'none') {
+                const myTimein = setTimeout(() => {
+                    page.classList.remove('fade')
+                    page.style.display = 'inline';
+                    /*if ('home' === pageId) {
+                        document.getElementById('logo-container').classList.add('home-logo');
+                    } else {
+                        document.getElementById('logo-container').classList.remove('home-logo');
+                    }*/
+                }, 500)
+            }
         } else {
             page.classList.add('fade');
             page.style.display = 'none';
@@ -106,20 +108,20 @@ function createProductBox(product) {
 
     productBox.innerHTML = `
     <div class="product-container">
-    <div class="product-image-container">
-    <img src="${product.image}" alt="${product.name}" class="product-image">
-    </div>
-    <div class="product-name">
-    <h2>${product.name}</h2>
-    </div>
-    <div class="product-price">
-    <p>₹${product.price}</p>
-    </div>
-    <div class="quantity-selector">
-    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
-    <span class="quantity">0</span>
-    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
-    </div>
+        <div class="product-image-container">
+            <img src="${product.image}" alt="${product.name}" class="product-image">
+        </div>
+        <div class="product-name">
+            <h2>${product.name}</h2>
+        </div>
+        <div class="product-price">
+            <p>₹${product.price}</p>
+        </div>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <span class="quantity">0</span>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
     </div>
     `;
     return productBox;
@@ -130,27 +132,16 @@ function toggleCategory(productType) {
     const thisProducts = document.querySelectorAll('.products-container');
     thisProducts.forEach(thisProduct => {
         if (thisProduct.id === productType) {
-            if (thisProduct.style.display === 'none') {
-                thisProduct.style.display = '';
-                document.getElementById(thisProduct.id + '-title').style.color = 'var(--pure-black)';
-                document.getElementById(thisProduct.id + '-title').style.backgroundColor = 'var(--theme)';
-            }
-            else {
-                thisProduct.style.display = 'none';
-                document.getElementById(thisProduct.id + '-title').style.color = 'var(--text-color)';
-                document.getElementById(thisProduct.id + '-title').style.backgroundColor = '#333';
-            }
+            thisProduct.style.display = '';
         } else {
             thisProduct.style.display = 'none';
-            document.getElementById(thisProduct.id + '-title').style.color = 'var(--text-color)';
-            document.getElementById(thisProduct.id + '-title').style.backgroundColor = '#333';
         }
     });
+    showPage('checkout');
 }
 
 // Function to load products into respective categories
 function loadProducts() {
-    toggleCategory('cashews-container');
     products.cashews.forEach(product => {
         cashewContainer.appendChild(createProductBox(product));
     });
@@ -223,15 +214,15 @@ function checkoutWhatsApp() {
     productBoxes.forEach(box => {
         const name = box.querySelector('.product-name h2').innerText;
         const quantity = parseInt(box.querySelector('.quantity').innerText);
-        const price = parseInt(box.querySelector('.product-price').innerText);
+        const price = parseFloat(box.querySelector('.product-price p').innerText.replace('₹', ''));
 
         if (quantity > 0) {
-            message += `${name}: ${quantity}, ${price}\n`;
+            message += `${name}: ${quantity}, ₹${price}, Quantity Total: ₹${quantity * price}\n`;
             hasItems = true;
         }
     })
     refreshTotal();
-    message += `\n\nTotal: ₹${total}\n`;
+    message += `\n\nGrand Total: ₹${total}\n`;
 
     if (hasItems) {
         const whatsappUrl = `https://wa.me/+918089841228?text=${encodeURIComponent(message)}`;

@@ -18,7 +18,10 @@
     <div id="nav-logo-container" class="nav-logo-container">
         <div id="nav">
             <button class="category-title" href="#" id="nav-home" onclick="showPage('home')">Home</button>
-            <button class="category-title" href="#" id="nav-checkout" onclick="showPage('checkout')">Checkout</button>
+            <button id="cashews-container-title" class="category-title"
+                onclick="toggleCategory('cashews-container')">Cashews</button>
+            <button id="tea-container-title" class="category-title" onclick="toggleCategory('tea-container')">Tea
+                Powder</button>
             <button class="category-title" href="#" id="nav-contact" onclick="showPage('contact')">Contact
                 Us</button>
         </div>
@@ -41,14 +44,10 @@
 
         <!-- Product Categories (Collapsible) -->
         <div id="product-categories">
-            <button id="cashews-container-title" class="category-title"
-                onclick="toggleCategory('cashews-container')">Cashews</button>
 
-            <button id="tea-container-title" class="category-title" onclick="toggleCategory('tea-container')">Tea
-                Powder</button>
         </div>
         <div id="product-list">
-            <div id="cashews-container" class="products-container"></div>
+            <div id="cashews-container" class="products-container" style="display: none;"></div>
             <div id="tea-container" class="products-container" style="display: none;"></div>
         </div>
         <!-- Total Price -->
